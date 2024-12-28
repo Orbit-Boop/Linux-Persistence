@@ -30,6 +30,9 @@ crontab -e
 ```
 /etc/cron.d/
 
+## Найти недавно измененные файлы
+find /home/captain -type f -mmin -30
+
 ## Найти файлы по типу rc.local
 
 ## Firewall
