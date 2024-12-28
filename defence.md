@@ -6,6 +6,17 @@
 ## White list
 ip и порты
 
+## demon с ssh-ключом
+```
+useradd -M -u <UID> -g <GID> -G <addition groups> <username>
+```
+sshd_config
+```
+Match group <groupname>
+AuthorizedKeysFile /etc/ssh/authorized-keys/%u
+```
+restart ssh
+
 ## port knocking
 
 ## Проверить процессы
