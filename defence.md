@@ -1,5 +1,8 @@
 # Для защиты
 
+## Honeypot
+https://habr.com/ru/articles/597871/
+
 ## Копирование файлов
 На резервный диск скопировать passwd, sudoers, shadow, group. После атаки восстанавливаем эти файлы.
 
