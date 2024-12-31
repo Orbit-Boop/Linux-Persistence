@@ -1,0 +1,27 @@
+#!/bin/bash
+
+num=`tty | grep -oe "[0-9]*"`
+num2=$1
+while true
+do
+	str=`ps auxf | grep "pts/[^{$num}{$num2}]" | grep -oe "^[a-Z0-9]*      [0-9]*" | grep -oe "      [0-9]*" | grep -oe "[0-9]*"`
+#echo $str 
+	str1=`echo $str`
+
+
+	IFS=' ' read -ra array <<< "$str1"
+	for i  in "${!array[@]}"
+	do
+		if [[ "$bas" = "${array[$i]}" ]]
+		then 
+			echo "jojo"
+		else
+			echo "$i"
+			kill -9 "${array[$i]}"
+		fi
+	echo "Элемент $i: ${array[$i]}"
+	done
+done
+
+#echo "$BASHPID"
+

